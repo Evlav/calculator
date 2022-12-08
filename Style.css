@@ -1,13 +1,18 @@
+body{
+    background-color:  #fbf7ed;
+}
+
 #container{
-    background-color: #FAF0DC;
     display: flex;
     justify-content: center;
 }
 
 #calcContainer{
-    background-color: #A39885;
+    background-color: bisque;
     height: 800px;
     width: 600px;
+
+    padding-inline: 10px;
 
     display: flex;
     flex-direction: column;
@@ -16,7 +21,7 @@
 }
 
 #screen{
-    background-color: bisque;
+    background-color: rgb(49, 48, 46);
     height: 110px;
     width: 570px;
 
@@ -24,17 +29,18 @@
 }
 
 #numbers{
-    color: #4b3626;
+    color: #20b2e2;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 70px;
     vertical-align: middle;
     line-height: 110px;
     padding-left: 20px;
+    padding: 10px;
     letter-spacing: 10px;
 }
 
 #buttonContainer{
-    background-color: bisque;
+    background-color: #A39885;
     height: 600px;
     width: 570px;
 
@@ -50,7 +56,7 @@
 }
 
 .button{
-    background-color: #C19770;
+    background-color: #FAF0DC;
     height: 120px;
     width: 120px;
     
