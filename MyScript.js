@@ -54,7 +54,16 @@ function display(value){
     let wholes = 0;
     let decimals = 0;
     let howmany = 0;
-    if (value > 99999999999){
+    if (value > 99999999999999999999){
+        var s = String(value).split('.');
+        wholes = s[0];
+        decimals = s[1];
+
+        var q = String(decimals).split('e');
+
+        screen.textContent = wholes + '.' + decimals.slice(0, 1) + 'e' + q[1];
+    }
+    else if (value > 99999999999){
         let firstpart =  String(value)[0] + '.' + String(value)[1] + String(value)[2];
         screen.textContent = firstpart + '*10^' + (String(value).length -1); 
     }
@@ -95,23 +104,20 @@ buttonList = ['1','2','3','4','5','6','7','8','9','0']
 
 buttonList.forEach(element => {
     var thisone = document.getElementById(element);
+    
     thisone.addEventListener('click', function() {
-        if (String(displayvalue).length <= 10){
-            if (aftercalc == true){
-                displayvalue = '';
-                firstnum = 0;
-                secondnum = 0;
-                screen.textContent = displayvalue;
-                aftercalc = false;
-
-                displayvalue = displayvalue + element;
-                screen.textContent = displayvalue;
-            }
-            else{
-                displayvalue = displayvalue + element;
-                screen.textContent = displayvalue;
-            }
+        if (aftercalc == true){
+            displayvalue = '';
+            firstnum = 0;
+            secondnum = 0;
+            aftercalc = false;
         }
+        if (String(displayvalue).length <= 10 ){
+            displayvalue = displayvalue + element;
+            screen.textContent = displayvalue;
+            
+        }
+        
 
 
             
